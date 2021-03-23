@@ -11,15 +11,15 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="Libs\x64\capstone.dll">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="Libs\x64\capstone.dylib">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="Libs\x64\capstone.so">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
+      <Content Include="Libs\x64\capstone.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Libs\x64\capstone.dylib">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="Libs\x64\capstone.so">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

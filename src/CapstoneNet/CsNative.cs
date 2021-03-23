@@ -62,6 +62,15 @@ namespace CapstoneNet
         public static extern CsErr CsOpen(CsArch arch, CsMode mode, IntPtr engine);
         
         [DllImport(LibraryName, EntryPoint = "cs_close")]
-        public static extern CsErr CsClose(IntPtr engine);
+        public static extern CsErr CsClose(IntPtr handle);
+        
+        [DllImport(LibraryName, EntryPoint = "cs_errno")]
+        public static extern CsErr CsErrno(IntPtr handle);
+        
+        [DllImport(LibraryName, EntryPoint = "cs_disasm")]
+        public static extern ulong CsDisasm(IntPtr handle, byte[] code, int codeSize, ulong address, ulong count, ref IntPtr insn);
+
+        [DllImport(LibraryName, EntryPoint = "cs_free")]
+        public static extern void CsFree(IntPtr addr, ulong count);
     }
 }
