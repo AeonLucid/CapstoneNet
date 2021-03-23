@@ -62,7 +62,7 @@ namespace CapstoneNet
         public static extern CsErr CsOpen(CsArch arch, CsMode mode, IntPtr engine);
         
         [DllImport(LibraryName, EntryPoint = "cs_close")]
-        public static extern CsErr CsClose(IntPtr handle);
+        public static extern CsErr CsClose(ref IntPtr handle);
         
         [DllImport(LibraryName, EntryPoint = "cs_errno")]
         public static extern CsErr CsErrno(IntPtr handle);

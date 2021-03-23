@@ -7,6 +7,8 @@ namespace CapstoneNet
 {
     public class Capstone : IDisposable
     {
+        private bool _isDisposed;
+        
         public Capstone(CsArch arch, CsMode mode)
         {
             var result = Marshal.AllocHGlobal(Marshal.SizeOf<IntPtr>());
@@ -66,7 +68,11 @@ namespace CapstoneNet
 
         public void Dispose()
         {
-            var err = CsNative.CsClose(Handle);
+            if (_isDisposed) return;
+            _isDisposed = true;
+
+            var handleLocal = Handle;
+            var err = CsNative.CsClose(ref handleLocal);
             if (err != CsErr.CS_ERR_OK)
             {
                 throw new CsException($"Failed to close native Unicorn instance, error {err}.", err);
