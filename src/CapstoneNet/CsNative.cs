@@ -52,7 +52,7 @@ namespace CapstoneNet
             });
         }
 #else
-        private const string LibraryName = "Libs/x64/unicorn";
+        private const string LibraryName = "Libs/x64/capstone";
 #endif
         
         [DllImport(LibraryName, EntryPoint = "cs_version")]
