@@ -1,0 +1,5 @@
+* text=auto
+
+*.dll     merge=binary
+*.dylib   merge=binary
+*.so      merge=binary
