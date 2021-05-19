@@ -22,5 +22,10 @@ namespace CapstoneNet.Data
         public string op_str;
 
         public IntPtr detail;
+
+        public override string ToString()
+        {
+            return $"{nameof(CsInsn)}: {mnemonic} {op_str}";
+        }
     }
 }
